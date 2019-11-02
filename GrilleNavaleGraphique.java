@@ -40,6 +40,13 @@ public class GrilleNavaleGraphique extends GrilleNavale{
 		return false;
 	}
 	
+	/**
+	 * Gère la réception d'un tir sur la grille. Si le tir est ajouté dans les tir
+	 * recus alors ce tir est également envoyé à chaque navire contenu dans la grille
+	 * 
+	 * @param c une référence vers la coordonnée du tir à receptionner
+	 * @return true si le tir à touché un navire de la grille
+	 */
 	public boolean recoitTir(Coordonnee c) {
 		if(super.recoitTir(c))
 		{
