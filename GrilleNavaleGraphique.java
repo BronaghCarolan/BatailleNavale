@@ -2,6 +2,14 @@ package fr.uga.miashs.inff3.carolanb;
 
 import java.awt.Color;
 
+/**
+ * Cette classe répresente une grille navale graphique dans un jeu de Bataille
+ * Navale
+ *
+ * @author Conor Evans et Bronagh Carolan
+ * @version 1.0
+ * @since 2018-10-19
+ */
 public class GrilleNavaleGraphique extends GrilleNavale{
 	
 	GrilleGraphique grilleGraphique;
