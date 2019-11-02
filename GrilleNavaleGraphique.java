@@ -24,6 +24,12 @@ public class GrilleNavaleGraphique extends GrilleNavale{
 		return grilleGraphique;
 	}
 	
+	/**
+	 * Ajoute un navire dans la grille si c'est possible.
+	 * 
+	 * @param n le navire à ajouter
+	 * @return true si le navire a été ajouté.
+	 */
 	public boolean ajouteNavire(Navire n)
 	{
 		if(super.ajouteNavire(n))
