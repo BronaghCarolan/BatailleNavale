@@ -3,6 +3,15 @@ package fr.uga.miashs.inff3.carolanb;
 import java.util.Arrays;
 import java.util.Random;
 
+
+/**
+ * Cette classe rÃ©presente une grille navale dans un jeu de Bataille
+ * Navale
+ *
+ * @author Conor Evans et Bronagh Carolan
+ * @version 1.0
+ * @since 2018-10-19
+ */
 public class GrilleNavale {
 	/**
 	 * Le tableau des navires contenus dans la grille
@@ -13,7 +22,7 @@ public class GrilleNavale {
 	 */
 	private int nbNavires;
 	/**
-	 * Taille de la grille, la grille est carrée
+	 * Taille de la grille, la grille est carrÃ©e
 	 */
 	private int tailleGrille;
 	/**
@@ -26,8 +35,8 @@ public class GrilleNavale {
 	private int nbTirsRecus;
 
 	/**
-	 * Initialise une grille navale de taille donnée Tous les attributs doivent être
-	 * initialisés
+	 * Initialise une grille navale de taille donnÃ©e Tous les attributs doivent Ãªtre
+	 * initialisÃ©s
 	 * 
 	 * @param taille la taille de la grille
 	 */
@@ -40,13 +49,13 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Ajoute un navire dans la grille. Un navire n'est pas ajouté si ses dimensions
-	 * font qu'il sort de la grille ou si il touche ou chevauche un navire déjà
-	 * présent dans la grille. L'attribut navire est agrandi automatiquement de 5
-	 * éléments si besoin
+	 * Ajoute un navire dans la grille. Un navire n'est pas ajoutÃ© si ses dimensions
+	 * font qu'il sort de la grille ou si il touche ou chevauche un navire dÃ©jÃ 
+	 * prÃ©sent dans la grille. L'attribut navire est agrandi automatiquement de 5
+	 * Ã©lÃ©ments si besoin
 	 * 
-	 * @param n le navire à ajouter
-	 * @return true si le navire a été ajouté.
+	 * @param n le navire Ã  ajouter
+	 * @return true si le navire a Ã©tÃ© ajoutÃ©.
 	 */
 	public boolean ajouteNavire(Navire n) {
 		if (n == null) {
@@ -75,9 +84,9 @@ public class GrilleNavale {
 
 	/**
 	 * Place automatiquement tailleNavires.length navires dont les tailles sont
-	 * données dans tailleNavires
+	 * donnÃ©es dans tailleNavires
 	 * 
-	 * @param taillesNavires tableau donnant les tailles des navires à créer et à
+	 * @param taillesNavires tableau donnant les tailles des navires Ã  crÃ©er et Ã 
 	 *                       placer dans la grille
 	 */
 	public void placementAuto(int[] taillesNavires) {
@@ -100,10 +109,10 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Teste si la coordonnée passée en paramètre est contenue dans la grille
+	 * Teste si la coordonnÃ©e passÃ©e en paramÃ¨tre est contenue dans la grille
 	 * 
-	 * @param c référence non nulle vers la coordonnée à tester
-	 * @return true si la coordonnée est dans la grille
+	 * @param c rÃ©fÃ©rence non nulle vers la coordonnÃ©e Ã  tester
+	 * @return true si la coordonnÃ©e est dans la grille
 	 */
 	private boolean estDansGrille(Coordonnee c) {
 		if (c.getLigne() > tailleGrille || c.getLigne() > tailleGrille
@@ -115,11 +124,11 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Teste si la coordonnée passée en paramètre est dans l'ensemble des tirs reçus
+	 * Teste si la coordonnÃ©e passÃ©e en paramÃ¨tre est dans l'ensemble des tirs reÃ§us
 	 * sur la grille
 	 * 
-	 * @param c référence non nulle vers la coordonnée à tester
-	 * @return true si la coordonnée est dans l'ensemble des tirs reçus sur la
+	 * @param c rÃ©fÃ©rence non nulle vers la coordonnÃ©e Ã  tester
+	 * @return true si la coordonnÃ©e est dans l'ensemble des tirs reÃ§us sur la
 	 *         grille
 	 */
 	private boolean estDansTirsRecus(Coordonnee c) {
@@ -132,11 +141,11 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Ajoute un tir dans le tableau tirsRecus. Pour être ajouté un tir doit être
-	 * dans la grille et ne doit pas etre déjà présent dans tirsRecus
+	 * Ajoute un tir dans le tableau tirsRecus. Pour Ãªtre ajoutÃ© un tir doit Ãªtre
+	 * dans la grille et ne doit pas etre dÃ©jÃ  prÃ©sent dans tirsRecus
 	 * 
-	 * @param c la coordonnée à ajouter
-	 * @return true si la coordonnée a été ajoutée dans tirsRecus
+	 * @param c la coordonnÃ©e Ã  ajouter
+	 * @return true si la coordonnÃ©e a Ã©tÃ© ajoutÃ©e dans tirsRecus
 	 */
 	private boolean ajouteDansTirsRecus(Coordonnee c) {
 		if (estDansTirsRecus(c) || !estDansGrille(c)){
@@ -157,11 +166,11 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Gère la réception d'un tir sur la grille. Si le tir est ajouté dans les tir
-	 * recus alors ce tir est également envoyé à chaque navire contenu dans la grille
+	 * GÃ¨re la rÃ©ception d'un tir sur la grille. Si le tir est ajoutÃ© dans les tir
+	 * recus alors ce tir est Ã©galement envoyÃ© Ã  chaque navire contenu dans la grille
 	 * 
-	 * @param c une référence vers la coordonnée du tir à receptionner
-	 * @return true si le tir à touché un navire de la grille
+	 * @param c une rÃ©fÃ©rence vers la coordonnÃ©e du tir Ã  receptionner
+	 * @return true si le tir Ã  touchÃ© un navire de la grille
 	 */
 	public boolean recoitTir(Coordonnee c) {
 		boolean tirToucheNavire = false;
@@ -177,11 +186,11 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Teste si l'un des navires présent dans la grille est touché au niveau de la
-	 * coordonnée passée en paramètre
+	 * Teste si l'un des navires prÃ©sent dans la grille est touchÃ© au niveau de la
+	 * coordonnÃ©e passÃ©e en paramÃ¨tre
 	 * 
-	 * @param c ue référence vers la coordonnée à tester
-	 * @return true si l'un des navire de la grille est touché sur cette coordonnée
+	 * @param c ue rÃ©fÃ©rence vers la coordonnÃ©e Ã  tester
+	 * @return true si l'un des navire de la grille est touchÃ© sur cette coordonnÃ©e
 	 */
 	public boolean estTouche(Coordonnee c) {
 		for(int i = 0; i < nbNavires; i++) {
@@ -193,11 +202,11 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Teste si un tir est dans les tirs recus mais n'a touché aucun navire
+	 * Teste si un tir est dans les tirs recus mais n'a touchÃ© aucun navire
 	 * 
-	 * @param c ue référence vers la coordonnée à tester
-	 * @return true si la coordonnée est dans tirs reçus mais aucun bateau n'a été
-	 *         touché
+	 * @param c ue rÃ©fÃ©rence vers la coordonnÃ©e Ã  tester
+	 * @return true si la coordonnÃ©e est dans tirs reÃ§us mais aucun bateau n'a Ã©tÃ©
+	 *         touchÃ©
 	 */
 	public boolean estALEau(Coordonnee c) {
 		if(estDansTirsRecus(c) && !estTouche(c)) {
@@ -207,9 +216,9 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Teste si tous les navires de la grille sont coulés
+	 * Teste si tous les navires de la grille sont coulÃ©s
 	 * 
-	 * @return true si tous les navires contenus dans la grille sont coulés
+	 * @return true si tous les navires contenus dans la grille sont coulÃ©s
 	 */
 	public boolean perdu() {
 		for(Navire n : navires) {
@@ -230,11 +239,11 @@ public class GrilleNavale {
 	}
 
 	/**
-	 * Si l'un des navires est présent sur la coordonnée c, la méthode teste si ce
-	 * navire est est coulé
+	 * Si l'un des navires est prÃ©sent sur la coordonnÃ©e c, la mÃ©thode teste si ce
+	 * navire est est coulÃ©
 	 * 
-	 * @param c une référence vers la coordonnée à tester
-	 * @return true si un navire est présent sur cette coordonnée et si il est coulé
+	 * @param c une rÃ©fÃ©rence vers la coordonnÃ©e Ã  tester
+	 * @return true si un navire est prÃ©sent sur cette coordonnÃ©e et si il est coulÃ©
 	 */
 	public boolean estCoule(Coordonnee c) {
 		for(Navire n : navires) {
